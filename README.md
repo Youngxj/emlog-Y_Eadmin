@@ -57,6 +57,9 @@ Y+Eadmin是基于bootstrap开源模版coco进行底层适配的，整个模版�
 	`store.php`	修复在线安装失败的bug
 	`template.php`	增加更多主题信息输出
 
+#### 更新记录
+2018年11月26日：修复默认编辑器插入图片失败
+
 #### 项目地址
 ###### Blog：https://www.youngxj.cn/552.html
 ###### Gitee：https://gitee.com/youngxj0/emlog-Y_Eadmin
