@@ -58,6 +58,6 @@ Y+Eadmin是基于bootstrap开源模版coco进行底层适配的，整个模版�
 	`template.php`	增加更多主题信息输出
 
 #### 项目地址
-Blog：https://www.youngxj.cn/552.html
-Gitee：https://gitee.com/youngxj0/emlog-Y_Eadmin
-GitHub：https://github.com/Youngxj/emlog-Y_Eadmin
+###### Blog：https://www.youngxj.cn/552.html
+###### Gitee：https://gitee.com/youngxj0/emlog-Y_Eadmin
+###### GitHub：https://github.com/Youngxj/emlog-Y_Eadmin
