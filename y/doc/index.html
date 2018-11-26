@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Y+Eadmin使用文档</title>
+  <link rel="alternate" type="application/rss+xml" title="egrappler.com" href="feed/index.html">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prettify.css">
+  <style type="text/css">
+  pre{white-space: pre-wrap;
+    word-wrap: break-word;}
+  </style>
+</head>
+<body >
+  <nav>
+    <div class="container">
+      <h1>Doc</h1>
+      <div id="menu">
+        <ul class="toplinks">
+          <li><a href="https://www.youngxj.cn">杨小杰博客</a></li>
+          <li><a href="https://tools.yum6.cn">杨小杰工具箱</a></li>
+        </ul>
+      </div>
+      <a id="menu-toggle" href="#" class=" ">&#9776;</a> </div>
+    </nav>
+    <header>
+      <div class="container">
+        <h2 class="docs-header"> Y+Eadmin使用说明</h2>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <ul class="docs-nav" id="menu-left">
+
+          <li><strong>前言</strong></li>
+          <li><a href="#welcome" class=" ">叙述</a></li>
+          <li><a href="#benefits" class=" ">特性</a></li>
+          <li><a href="#features" class=" ">安装教程</a></li>
+          <li><a href="#license" class=" ">使用帮助</a></li>
+          <li class="separator"></li>
+          <li><strong>技术支持</strong></li>
+          <li><a href="#file_list" class=" ">文件列表</a></li>
+          <li><a href="#Common_problem" class=" ">常见问题</a></li>
+          <li><a href="#other" class=" ">核心文件修改</a></li>
+          <li><a href="#about" class=" ">关于</a></li>
+        </ul>
+        <div class="docs-content">
+          <h2> 前言</h2>
+          <h3 id="welcome" name="welcome"> 叙述</h3>
+          <p> 首先感谢你选择Y+Eadmin，该模版为开源EMlog使用的后台模版</p>
+          <p> Y+Eadmin是基于bootstrap开源模版coco进行底层适配的，整个模版参考N+模版进行全局设计及代码修整，目前适用于Emlog5.3.x版本的后台使用。
+            该模版中使用了非常多的开源项目：
+          </p>
+          <ol>
+            <li>BootStrap</li>
+            <li>Jquery</li>
+            <li>Ckeditor</li>
+            <li>等等……</li>
+          </ol>
+          <p> 感谢这些优秀的开源项目，否则就没有现在的Y+Eadmin </p>
+          <h3 id="benefits"> 特性</h3>
+          <p>基于bootstrap为底层的自适应模版，在多设备上的效果体验都是极佳的，方便Emloger的后台操作，支持双编辑器，其中包含Ckeditor以及原生的editor，能带给你更好的写作体验。使用notifyjs插件能给你友好的提醒体验。微语图片上传也使用html5上传，解决手机不能传图的尴尬。</p>
+          
+          <h3 id="features"> 安装教程</h3>
+          
+          <p>下载压缩包，上传到admin目录下直接解压即可(需要覆盖原文件)</p>
+          <p>安装指定的模版设置插件，否则不能进行模版设置</p>
+          
+          <h3 id="license"> 使用帮助</h3>
+          <p>1、双编辑器特效可以会让你体验到不同的写作乐趣</p>
+          <p> 修改路径/y/header.php文件 第四行 <code>$editType</code> 变量</p>
+          <ol>
+            <li> 0 -> 原生editor</li>
+            <li> 1 -> 多功能的Ckeditor</li>
+          </ol>
+          <p>2、后台侧边栏公告修改路径/y/header.php文件第6六行 <code>$Notice</code> 变量</p>
+          <p>3、插件插入图片、附件等等，插入失败，其实这个问题很简单，就是因为各个编辑器生成的class、id都是不同的，插件作者一般都会写死插入class、id属性，所以才会导致插入失败，解决只能从插件处修改对应class、id。小杰给大家提供一下关于Ckeditor编辑器的数据新增、插入、获取方法方便大家修改Bug
+            <pre>
+              //获取内容
+              // CKEDITOR.instances.content.getData();
+              //设置内容
+              // CKEDITOR.instances.content.setData( 'This is the editor data.' );
+              //插入内容
+              // CKEDITOR.instances.content.insertHtml("新内容");
+            </pre>
+          </p>
+
+          <hr>
+          <h2> 技术支持</h2>
+          <p> 小杰在适配的时候遇到很多问题，这里总结分享记录一下，方便后人继续造轮子</p>
+          <h3 id="file_list">文件列表</h3>
+          <ul>
+            <li>│  add_log.php  --日志发布</li>
+            <li>│  add_page.php  --页面发布</li>
+            <li>│  admin_log.php  --文章列表</li>
+            <li>│  admin_page.php  --页面列表</li>
+            <li>│  attlib.php  --附件上传</li>
+            <li>│  blogger.php  --用户资料</li>
+            <li>│  comment.php  --评论列表</li>
+            <li>│  comment_edit.php  --评论编辑</li>
+            <li>│  comment_reply.php  --评论回复</li>
+            <li>│  configure.php  --基本设置</li>
+            <li>│  data.php  --数据操作</li>
+            <li>│  edit_log.php  --日志编辑</li>
+            <li>│  edit_page.php  --页面编辑</li>
+            <li>│  footer.php  --尾部</li>
+            <li>│  header.php  --头部</li>
+            <li>│  index.php  --首页</li>
+            <li>│  linkedit.php  --链接编辑</li>
+            <li>│  links.php  --链接列表</li>
+            <li>│  login.php  --登录页面</li>
+            <li>│  navbar.php  --导航列表</li>
+            <li>│  naviedit.php  --导航编辑</li>
+            <li>│  plugin.php  --插件列表</li>
+            <li>│  plugin_install.php  --插件安装</li>
+            <li>│  seo.php  --SEO设置</li>
+            <li>│  sort.php  --分类列表</li>
+            <li>│  sortedit.php  --分类编辑</li>
+            <li>│  store.php  --在线应用</li>
+            <li>│  store_install.php  --在线应用安装</li>
+            <li>│  tag.php  --标签列表</li>
+            <li>│  tagedit.php  --标签编辑</li>
+            <li>│  template.php  --主题列表</li>
+            <li>│  template_crop.php  --顶部图片编辑</li>
+            <li>│  template_install.php  --主题安装</li>
+            <li>│  template_top.php  --顶部图片设置</li>
+            <li>│  twitter.php  --微语</li>
+            <li>│  upload.php  --上传附件</li>
+            <li>│  upload_multi.php  --批量上传</li>
+            <li>│  user.php  --用户列表</li>
+            <li>│  useredit.php  --用户编辑</li>
+            <li>│  widgets.php  --侧边栏</li>
+          </ul>
+          <h3 id="Common_problem"> 常见问题</h3>
+          <ol>
+            <li>由于emlog机制问题，新建一篇文章时不会产生文章logid，在选择上传插入附件时，或在浏览附件库时都会提示权限不足，emlog的机制为自动js触发保存才会生成logid到页面id，之后才能对附件进行操作。这个是我在写后台时遇到的最大的问题。</li>
+            <li>其次就是关于模版设置，由于官方的模版设置插件和模版的class、id有一定出入，所以不会出现设置按钮，必须安装指定模版设置插件，才能正常使用</li>
+            <li>在线应用安装失败问题请参考《<a href="https://www.youngxj.cn/551.html" target="_black">关于emlog后台在线安装模提示失败的问题分析和解决办法</a>》</li>
+            <li>插件插入图片、附件等等，插入失败，其实这个问题很简单，就是因为各个编辑器生成的class、id都是不同的，插件作者一般都会写死插入class、id属性，所以才会导致插入失败，解决只能从插件处修改对应class、id。</li>
+            <li>由于Ckeditor不支持安卓手机的特性，所以小杰尝试修改了Ckeditor的核心代码，如果你在写作中出现异常情况，请联系小杰。</li>
+          </ol>
+          <h3 id="other"></h3>
+          <p>由于emlog官方核心文件与模版功能有一定的出入，所以Y+Eadmin修改了emlog后台三个核心文件，如果不覆盖这三个文件，该模版将无法正常使用</p>
+          <ol>
+            <li>globals.php</li>
+            <p>修改模版路径以及官方服务域名为https</p>
+            <li>store.php</li>
+            <p>修复在线安装失败的bug</p>
+            <li>template.php</li>
+            <p>增加更多主题信息输出</p>
+          </ol>
+          <h3 id="about"> 关于</h3>
+          <ul>
+            <li>Author : Youngxj</li>
+            <li>Blog : www.youngxj.cn</li>
+            <li>QQ : 1170535111</li>
+            <li>Sina : Young杨小杰</li>
+            <li>Email : blog@youngxj.cn</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p> &copy; 2018 Youngxj <a href="https://www.youngxj.cn/" target="_blank" title="杨小杰博客">杨小杰博客</a></p>
+      </div>
+    </footer>
+    <script src="../assets/libs/jquery/jquery-2.2.1.min.js"></script> 
+
+    <script type="text/javascript" src="js/prettify/prettify.js"></script> 
+    <script src="js/layout.js"></script>
+    <script src="js/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
+    <script src="js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script>
+
+  </body>
+  </html>
